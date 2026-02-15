@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>CV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="index.html">Anton Krook</a>
+      </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="specialisering.html">Specialisering</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+
+       <div class="social-icons">
+      <a href="https://www.linkedin.com/in/dittnamn" target="_blank">
+        <img src="icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="mailto:mejladress@example.com">
+        <img src="icons/mail.svg" alt="Mail" />
+      </a>
+    </div>
+    </nav>
+  </div>
+</header>
+
+  <section class="cv-page fade-section">
+  <h1>Curriculum Vitae</h1>
+
+  <!-- Erfarenhet -->
+  <div class="cv-section">
+    <h2>Erfarenhet</h2>
+    <div class="cv-item">
+      <h3>Jobb 1</h3>
+      <span>2023 – Nu</span>
+      <p>Beskrivning.</p>
+    </div>
+    <div class="cv-item">
+      <h3>jobb2</h3>
+      <span>År</span>
+      <p>Beskrivning.</p>
+    </div>
+  </div>
+
+  <!-- Utbildning -->
+  <div class="cv-section">
+    <h2>Utbildning</h2>
+    <div class="cv-item">
+      <h3>TGA</h3>
+      <span>2024 – nu</span>
+      <p>Beskrivning.</p>
+    </div>
+  </div>
+
+  <!-- Färdigheter -->
+  <div class="cv-section">
+    <h2>Skills</h2>
+    <div class="cv-item">
+      <p>Skills</p>
+    </div>
+  </div>
+
+  <!-- Kontakt -->
+  <div class="cv-section">
+    <h2>Kontakt</h2>
+    <div class="cv-item">
+      <p>Email: <a href="mailto:mejladress@example.com">e-post</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/dittnamn" target="_blank">Linkeid</a></p>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.style.background = "rgba(0, 0, 0, 0.85)";
+      navbar.style.backdropFilter = "blur(10px)";
+    } else {
+      navbar.style.background = "transparent";
+      navbar.style.backdropFilter = "none";
+    }
+  });
+</script>
+
+<script>
+const sections = document.querySelectorAll('.fade-section');
+
+const options = {
+  threshold: 0.1,   // 10% av sektionen syns
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');   // fadea in
+    } else {
+      entry.target.classList.remove('visible'); // fadea ut
+    }
+  });
+}, options);
+
+sections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>

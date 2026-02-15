@@ -1,123 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name — Portfolio</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d1117;
-      color: #e6edf3;
-      line-height: 1.6;
-    }
-
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    p.subtitle {
-      font-size: 1.2rem;
-      color: #9ba3b4;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      padding: 40px 20px 80px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background-color: #161b22;
-      border-radius: 10px;
-      overflow: hidden;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 0 0 transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    }
-
-    .card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-content h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .card-content p {
-      margin: 0;
-      color: #9ba3b4;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anton Krook</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Anton Krook</div>
 
-  <header>
-    <h1>Your Name</h1>
-    <p class="subtitle">
-      A short professional summary — who you are, what you do, and what makes your work stand out.
-    </p>
-  </header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="specialisering.html">Specialisering</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
 
-  <section class="projects">
+       <div class="social-icons">
+      <a href="https://www.linkedin.com/in/dittnamn" target="_blank">
+        <img src="icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="mailto:mejladress@example.com">
+        <img src="icons/mail.svg" alt="Mail" />
+      </a>
+    </div>
+    </nav>
+  </div>
+</header>
 
-    <!-- Project 1 -->
-    <a class="card" href="project1.html">
-      <img src="images/project1.png" alt="Project 1">
-      <div class="card-content">
-        <h3>Project One</h3>
-        <p>Short description of what this project is about.</p>
+
+
+ <!-- HERO -->
+<section class="hero fade-section">
+
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="ai-background.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Under Construction</h1>
+    <h2>AI Programmer</h2>
+    <a href="specialisering.html" class="cta-button">
+      Learn more
+    </a>
+  </div>
+
+</section>
+
+<section class="specialization-section fade-section">
+  <div class="section-header">
+    <h2>Goal oriented action planning</h2>
+    <div class="header-line"></div>
+  </div>
+
+  <div class="specialization-content">
+    <p>I have explored GOAP for game AI.</p>
+    <a href="specialisering.html" class="cta-button">Learn more</a>
+  </div>
+</section>
+
+
+
+<!-- SPELPROJEKT -->
+<section class="games-section fade-section">
+  <!-- Sektionstitel med linje på samma rad -->
+  <div class="section-header">
+    <h2>Spelprojekt</h2>
+    <div class="header-line"></div>
+  </div>
+
+  <!-- Grid med projekt -->
+  <div class="games-grid">
+
+    <a href="game1.html" class="game-box">
+      <div class="game-bg" style="background-image: url('images/project1.png');"></div>
+      <div class="game-info">
+        <h3>P7 - TBD</h3>
+        <p>A very cool game!</p>
       </div>
     </a>
 
-    <!-- Project 2 -->
-    <a class="card" href="project2.html">
-      <img src="images/project2.png" alt="Project 2">
-      <div class="card-content">
-        <h3>Project Two</h3>
-        <p>Short description of your second project.</p>
+    <a href="game2.html" class="game-box">
+      <div class="game-bg" style="background-image: url('images/project2.png');"></div>
+      <div class="game-info">
+        <h3>Wizard game</h3>
+        <p>A awesome 3D platformer game in progress</p>
       </div>
     </a>
 
-    <!-- Project 3 -->
-    <a class="card" href="project3.html">
-      <img src="images/project1.png" alt="Project 3">
-      <div class="card-content">
-        <h3>Project Three</h3>
-        <p>Short description of your third project.</p>
+    <a href="game3.html" class="game-box">
+      <div class="game-bg" style="background-image: url('images/project1.png');"></div>
+      <div class="game-info">
+        <h3>Spite OathBound</h3>
+        <p>A diablo like game where you play as a shieldmaiden trying to save doomed souls who are locked out of Asgard.</p>
       </div>
     </a>
 
-  </section>
+  </div>
+</section>
+
+
+
+  <script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.style.background = "rgba(0, 0, 0, 0.85)";
+      navbar.style.backdropFilter = "blur(10px)";
+    } else {
+      navbar.style.background = "transparent";
+      navbar.style.backdropFilter = "none";
+    }
+  });
+</script>
+
+<script>
+const sections = document.querySelectorAll('.fade-section');
+
+const options = {
+  threshold: 0.1,   // 10% av sektionen syns
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');   // fadea in
+    } else {
+      entry.target.classList.remove('visible'); // fadea ut
+    }
+  });
+}, options);
+
+sections.forEach(section => observer.observe(section));
+</script>
+
 
 </body>
 </html>
