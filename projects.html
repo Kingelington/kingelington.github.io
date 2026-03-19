@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anton Krook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Anton Krook</div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="specialisering.html">Specialisering</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+
+       <div class="social-icons">
+      <a href="https://www.linkedin.com/in/dittnamn" target="_blank">
+        <img src="icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="mailto:mejladress@example.com">
+        <img src="icons/mail.svg" alt="Mail" />
+      </a>
+    </div>
+    </nav>
+  </div>
+</header>
+
+
+
+ <!-- HERO -->
+ <div class="project-container">
+    <section class="project-intro">
+      <canvas id = "ai-bg"></canvas>
+      <h2>Overview</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis ligula faucibus turpis vulputate ullamcorper.
+        Nullam sed dictum libero, vel convallis magna. Maecenas commodo fermentum commodo. 
+        Suspendisse feugiat eros vitae volutpat lacinia. Aenean laoreet venenatis est, sed blandit ligula varius at. Aenean at consectetur nisi.
+        Cras nec mi eu dui viverra porta. 
+        Phasellus purus magna, interdum a ex at, porta aliquet erat. Morbi varius vitae orci et tempor. In a varius augue.
+        Sed a accumsan sem. Integer luctus tellus semper, dictum mauris in, molestie erat. Vivamus tortor justo, eleifend vel nunc vitae, dapibus consequat justo. 
+        Nullam lorem sem, iaculis tincidunt elit vel, varius consequat lorem. 
+        Proin porta congue velit, sit amet aliquam sapien faucibus et. Phasellus orci arcu, sagittis eget porttitor luctus, imperdiet vitae odio.
+        Etiam vel arcu dictum elit efficitur auctor vel ut tellus.
+      </p>
+    </section>
+
+    <section class="gameproject-section" id="gameproject-section">
+      <h2 class ="center-title"> Games</h2>
+      <div id="game-container"></div>
+      </section>
+
+  <script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.style.background = "rgba(0, 0, 0, 0.85)";
+      navbar.style.backdropFilter = "blur(10px)";
+    } else {
+      navbar.style.background = "transparent";
+      navbar.style.backdropFilter = "none";
+    }
+  });
+</script>
+
+<script>
+const sections = document.querySelectorAll('.fade-section');
+
+const options = {
+  threshold: 0.1,   // 10% av sektionen syns
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');   // fadea in
+    } else {
+      entry.target.classList.remove('visible'); // fadea ut
+    }
+  });
+}, options);
+
+sections.forEach(section => observer.observe(section));
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

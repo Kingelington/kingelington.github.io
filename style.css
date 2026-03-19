@@ -21,8 +21,6 @@ body {
   transform: translateY(0);
 }
 
-
-
 .hero {
   position: relative;
   height: 100vh;
@@ -33,6 +31,12 @@ body {
   color: white;
   overflow: hidden;
   margin-top: 80px;
+}
+
+.content-block.text-only {
+  display: block;       
+  max-width: 800px;     
+  margin: 60px auto;    
 }
 
 .background-video {
@@ -104,8 +108,40 @@ body {
 }
 
 .specialization-content {
-  max-width: 700px;
-  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .specialization-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-content {
+    justify-content: center;
+  }
 }
 
 .specialization-content p {
@@ -313,4 +349,213 @@ body {
 
 .cv-item a:hover {
   text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+/* HERO */
+.project-hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.project-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 10%;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-overlay p {
+  opacity: 0.8;
+}
+
+.project-container {
+  padding: 80px 8%;
+  max-width: 1600px;
+  margin: auto;
+}
+
+.project-section {
+  margin-bottom: 100px;
+}
+
+#ai-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #111;
+}
+
+.project-intro {
+  margin-bottom: 100px;
+}
+
+.project-section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+.content-block {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.content-block h3 {
+  margin-bottom: 20px;
+}
+
+.content-block p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.center-title
+{
+  text-align: center;
+}
+
+.content-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.text {
+  flex: 1;
+}
+
+.image {
+  flex: 1;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .content-block {
+    flex-direction: column-reverse;
+  }
+
+  .content-block.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Section styling */
+.gameproject-section {
+  padding: 80px 6%;
+  background: #111;       /* dark background to match portfolio */
+  color: white;
+}
+
+/* Section heading */
+.gameproject-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+/* Container grid for project cards */
+#game-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Card wrapper */
+.project-card {
+  position: relative;
+  display: block;
+  height: 220px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+/* Image background */
+.project-card .card-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  transition: filter 0.3s ease;
+}
+
+.project-card:hover .card-image {
+  filter: brightness(0.4);
+}
+
+/* Overlay text */
+.project-card .card-overlay {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  pointer-events: none; /* ensures hover works on whole card */
+}
+
+/* Overlay heading */
+.project-card .card-overlay h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+/* Overlay paragraph */
+.project-card .card-overlay p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: #ddd;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .gameproject-section {
+    padding: 60px 4%;
+  }
+
+  .project-card {
+    height: 180px;
+  }
+
+  .project-card .card-overlay h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-card .card-overlay p {
+    font-size: 0.9rem;
+  }
 }
