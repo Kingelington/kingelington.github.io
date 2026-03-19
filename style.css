@@ -230,68 +230,148 @@ body {
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 10%;
-  z-index: 1000;
-  transition: background 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0f0f0f;
 }
 
+/* Nav-container som flexbox, centrerar allt */
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: center; /* centrerar horisontellt */
+    align-items: center;
+    gap: 50px; /* mellan logga och länkar */
+    padding: 15px 20px;
+    background: #0f0f0f;
+    font-family: 'Inter', sans-serif;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: white;
-}
-
+/* Logo */
 .logo a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover-effekt */
 .logo a:hover {
-  opacity: 0.8; /* subtil hover */
+    color: #ffd700; /* accentfärg */
+    transform: scale(1.05); /* subtil zoom */
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 40px;
+/* Underline-animation (valfritt) */
+.logo a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: width 0.3s ease;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
+.logo a:hover::after {
+    width: 100%;
 }
 
-.nav-links a:hover {
-  opacity: 0.6;
+/* Länkar */
+
+.nav-links li a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
+/* Hover-effekt: färg + underline animation */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #ffd700; /* accentfärg */
+    transition: width 0.3s ease;
 }
 
-.social-icons img {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.2s ease;
+.nav-links li a:hover::after {
+    width: 100%;
 }
 
-.social-icons img:hover {
-  transform: scale(1.1);
+.nav-links li a:hover {
+    color: #ffd700;
+}
+
+/* Aktiv länk */
+.nav-links li a.active {
+    color: #ffd700;
+}
+
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.nav-links, .social-icons { display: flex; gap: 30px; }
+/* Hamburger för mobil */
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    .nav-links, .social-icons { 
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #0f0f0f;
+        padding: 20px;
+        border-radius: 8px;
+        z-index: 1000;
+    }
+
+    .nav-links.active 
+    {
+       display: flex; 
+    }
+    .hamburger { display: flex; position: absolute; top: 15px; right: 20px; cursor: pointer; z-index: 1100; flex-direction: column; gap: 4px; }
+    .hamburger span { width: 25px; height: 3px; background: white; border-radius: 2px; }
+
+        .social-icons {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        object-fit: contain; /* håller proportioner */
+        top: 15px;
+        left: 20px; /* flytta till vänster */
+        z-index: 1100;
+        display: flex;
+        gap: 15px;
+    }
 }
 
 
@@ -558,4 +638,108 @@ body {
   .project-card .card-overlay p {
     font-size: 0.9rem;
   }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0f0f;
+    color: #eaeaea;
+    font-family: Arial, sans-serif;
+}
+
+.about {
+    padding: 100px 20px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* Bild */
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    opacity: 1.0;
+}
+
+
+/* Text */
+.about-text h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.about-text p {
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    max-width: 500px;
+}
+
+/* Subtil linje (valfri, men inte boxig) */
+.about-text {
+    position: relative;
+}
+
+.about-text::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 1px;
+    height: 80%;
+    background: rgba(255,255,255,0.1);
+}
+
+/* MOBIL – tidigare breakpoint + bättre layout */
+@media (max-width: 600px) {
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* Gör att texten kommer först */
+    .about-text {
+        order: 1;
+    }
+
+    .about-image {
+        order: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Gör bilden lite mindre så den inte tar över */
+    .about-image img {
+        width: 100%;
+        max-width: 65ch;
+        height: auto;
+    }
+
+    /* Mycket viktig: större & tydligare text */
+    .about-text h1 {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #ddd;
+    }
+
+    /* Ta bort linjen (den ser ofta konstig ut på mobil) */
+    .about-text::before {
+        display: none;
+    }
 }

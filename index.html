@@ -7,28 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-  <div class="nav-container">
-    <div class="logo">Anton Krook</div>
-
-    <nav>
-      <ul class="nav-links">
-        <li><a href="specialisering.html">Specialisering</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="cv.html">CV</a></li>
-      </ul>
-
-       <div class="social-icons">
-      <a href="https://www.linkedin.com/in/dittnamn" target="_blank">
-        <img src="icons/linkedin.svg" alt="LinkedIn" />
-      </a>
-      <a href="mailto:mejladress@example.com">
-        <img src="icons/mail.svg" alt="Mail" />
-      </a>
-    </div>
-    </nav>
-  </div>
+  
+<header class="navbar">
+  <div class="nav-container" id="navbar"></div>
 </header>
 
 
@@ -83,7 +64,7 @@
 <section class="games-section fade-section">
   <!-- Sektionstitel med linje på samma rad -->
   <div class="section-header">
-    <h2>Spelprojekt</h2>
+    <h2>Featured</h2>
     <div class="header-line"></div>
   </div>
 
@@ -102,7 +83,7 @@
       <div class="game-bg" style="background-image: url('images/project2.png');"></div>
       <div class="game-info">
         <h3>Wizard game</h3>
-        <p>A awesome 3D platformer game in progress</p>
+        <p>An awesome 3D platformer game in progress</p>
       </div>
     </a>
 
@@ -153,6 +134,6 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => observer.observe(section));
 </script>
 
-
+<script src="navbar.js"></script>
 </body>
 </html>

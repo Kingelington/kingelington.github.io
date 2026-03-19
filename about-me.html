@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About me</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-container" id="navbar"></div>
+</header>
+
+<section class="cv-page fade-section">
+  <section class="about">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="images/project1.png">
+      </div>
+      <div class="about-text">
+        <h1>Hej!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis ligula faucibus turpis vulputate ullamcorper.
+          Nullam sed dictum libero, vel convallis magna. Maecenas commodo fermentum commodo. 
+          Suspendisse feugiat eros vitae volutpat lacinia. Aenean laoreet venenatis est, sed blandit ligula varius at. Aenean at consectetur nisi.
+          Cras nec mi eu dui viverra porta. 
+          Phasellus purus magna, interdum a ex at, porta aliquet erat. Morbi varius vitae orci et tempor. In a varius augue.
+          Sed a accumsan sem. Integer luctus tellus semper, dictum mauris in, molestie erat. Vivamus tortor justo, eleifend vel nunc vitae, dapibus consequat justo. 
+          Nullam lorem sem, iaculis tincidunt elit vel, varius consequat lorem. 
+          Proin porta congue velit, sit amet aliquam sapien faucibus et. Phasellus orci arcu, sagittis eget porttitor luctus, imperdiet vitae odio.
+          Etiam vel arcu dictum elit efficitur auctor vel ut tellus.
+        </p>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.style.background = "rgba(0, 0, 0, 0.85)";
+      navbar.style.backdropFilter = "blur(10px)";
+    } else {
+      navbar.style.background = "transparent";
+      navbar.style.backdropFilter = "none";
+    }
+  });
+</script>
+
+<script>
+  const sections = document.querySelectorAll('.fade-section');
+  
+  const options = {
+    threshold: 0.1,   // 10% av sektionen syns
+    rootMargin: "0px 0px -50px 0px"
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');   // fadea in
+      } else {
+        entry.target.classList.remove('visible'); // fadea ut
+      }
+    });
+  }, options);
+  
+  sections.forEach(section => observer.observe(section));
+</script>
+<script src="navbar.js"></script>
+</body>
+</html>

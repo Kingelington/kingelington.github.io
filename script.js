@@ -172,37 +172,37 @@ const gameProjects = [
   {
     title: "Merle - the kinda incompetent wizard (In Progress)",
     image: "images/project1.png",
-    link: "battle-simulator.html",
+    link: "index.html",
     description: "A game about a wizard who has made a mess"
   },
   {
     title: "Spite : Oathbound",
     image: "images/project2.png",
-    link: "stealth-puzzle.html",
+    link: "index.html",
     description: "Play as a shieldmaiden..."
   },
   {
     title: "Operation Space Travel",
     image: "images/project1.png",
-    link: "arena-fighter.html",
+    link: "index.html",
     description: "Awesome game!"
   },
   {
     title: "TunnelVision",
     image: "images/project1.png",
-    link: "arena-fighter.html",
+    link: "index.html",
     description: "Awesome game!"
   },
   {
     title: "Pawn's Gambit",
     image: "images/project1.png",
-    link: "arena-fighter.html",
+    link: "index.html",
     description: "Awesome game!"
   },
   {
     title: "CyberBoard",
     image: "images/project1.png",
-    link: "arena-fighter.html",
+    link: "index.html",
     description: "Awesome game!"
   },
 ];
