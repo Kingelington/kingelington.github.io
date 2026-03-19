@@ -272,6 +272,3 @@ if(gameContainer)
     });
 
 }
-
-console.log(gameContainer);
-console.log(gameProjects);
