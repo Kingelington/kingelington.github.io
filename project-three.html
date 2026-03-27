@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container" id="navbar"></div>
+</header>
+
+<body>
+<div class="gameproject">
+
+  <!-- Video -->
+  <div class="gameproject-video">
+    <iframe 
+      src="https://www.youtube.com/embed/C2sNwLEPPF4?si=8y8gvEZA0XmlNFeN"
+      title="Project Video"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Title -->
+  <h2 class="gameproject-title">Tunnel Vision</h2>
+
+  <!-- Details Window -->
+  <div class="gameproject-details">
+    <div><strong>Engine:</strong> TGE</div>
+    <div><strong>Language:</strong> C++</div>
+    <div><strong>Duration:</strong> 6 weeks</div>
+  </div>
+
+  <!-- Summary -->
+  <div class="gameproject-summary">
+    <h3>Summary</h3>
+    <p>
+      A short description of the project, what the game is about, and what makes it interesting.
+    </p>
+  </div>
+
+  <!-- Contributions -->
+  <div class="gameproject-contributions">
+    <h3>My Contributions</h3>
+    <ul>
+      <li>Gameplay programming</li>
+      <li>AI behavior systems</li>
+      <li>UI implementation</li>
+      <li>Level scripting</li>
+    </ul>
+  </div>
+
+  <!-- Screenshot Gallery -->
+<div class="gameproject-gallery-wrapper">
+
+  <button class="gallery-btn left">‹</button>
+
+  <div class="gameproject-gallery">
+    <img src="images/project1.png" alt="">
+    <img src="images/project1.png" alt="">
+    <img src="images/project2.png" alt="">
+    <img src="images/project1.png" alt="">
+    <img src="images/project1.png" alt="">
+  </div>
+
+  <button class="gallery-btn right">›</button>
+
+</div>
+</div>
+
+<script>
+const gallery = document.querySelector('.gameproject-gallery');
+
+document.querySelector('.gallery-btn.left').onclick = () => {
+  gallery.scrollBy({ left: -300, behavior: 'smooth' });
+};
+
+document.querySelector('.gallery-btn.right').onclick = () => {
+  gallery.scrollBy({ left: 300, behavior: 'smooth' });
+};
+</script>
+
+<script src="navbar.js"></script>
+<script src="footer.js"></script>
+</body>
+
+</html>

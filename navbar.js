@@ -1,15 +1,14 @@
 // Data
 const navData = {
-    logo: { text: "start", url: "index.html" },
+    logo: { text: "Anton Krook", url: "index.html" },
     links: [
-        { name: "Specialisering", url: "specialisering.html" },
-        { name: "Projekt", url: "projects.html" },
+        { name: "GOAP", url: "specialisering.html" },
+        { name: "Game Projects", url: "projects.html" },
         { name: "About Me", url: "about-me.html" },
         { name: "CV", url: "cv.html" }
     ],
     socials: [
-        { url: "https://www.linkedin.com/in/dittnamn", icon: "icons/linkedin.svg", alt: "LinkedIn" },
-        { url: "mailto:mejladress@example.com", icon: "icons/mail.svg", alt: "Mail" }
+        { url: "https://www.linkedin.com/in/dittnamn", icon: "icons/InBug-White.png", alt: "LinkedIn" },
     ]
 };
 
@@ -49,8 +48,8 @@ navData.socials.forEach(social => {
     a.href = social.url;
     if (social.url.startsWith("http")) a.target = "_blank";
     const img = document.createElement("img");
-    img.src = "";
-    img.alt = "in";
+    img.src = social.icon;
+    img.alt = social.alt;
     a.appendChild(img);
     socialDiv.appendChild(a);
 });

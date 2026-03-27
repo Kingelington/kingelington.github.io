@@ -55,6 +55,11 @@ body {
   z-index: -1;
 }
 
+.overview-text {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
 .hero-content h1 {
   font-size: 4rem;
 }
@@ -445,6 +450,24 @@ body {
   overflow: hidden;
 }
 
+.project-video-window {
+  width: 90%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;        /* välj storlek */
+  overflow: hidden;    /* klipper bort överflöd */
+  border-radius: 12px; /* valfritt */
+  margin: 2rem auto;
+  border: 4px solid #424242;
+  border-radius: 8px;
+}
+
+.project-video-window video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fyller fönstret snyggt */
+  display: block;
+}
+
 .project-hero video {
   width: 100%;
   height: 100%;
@@ -499,6 +522,148 @@ body {
   gap: 40px;
   align-items: center;
   margin-top: 40px;
+}
+
+.content-block.section-title {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  text-align: center;
+  margin: 5rem 0 5rem;
+}
+
+.content-block.section-title h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.gameproject {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #ddd;
+  font-family: sans-serif;
+}
+
+/* Video */
+.gameproject-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+
+/* Title */
+.gameproject-title {
+  margin-top: 24px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+/* Details window */
+.gameproject-details {
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 1rem;
+}
+
+.gameproject-details strong {
+  color: #fff;
+}
+
+/* Section headers */
+.gameproject-summary h3,
+.gameproject-contributions h3 {
+  margin-top: 32px;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  color: #fff;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+  padding-bottom: 4px;
+}
+
+/* Body text */
+.gameproject-summary p,
+.gameproject-contributions ul {
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.gameproject-contributions ul {
+  padding-left: 20px;
+}
+
+.gameproject-gallery-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Gallery */
+.gameproject-gallery {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.gameproject-gallery img {
+  height: 260px;          /* bigger images */
+  width: auto;            /* keeps aspect ratio */
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;         /* keeps them in one row */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+}
+
+.gameproject-gallery img:hover {
+  transform: scale(1.03); /* tiny lift, not a zoom */
+}
+
+
+/* Optional: hide scrollbar */
+.gameproject-gallery::-webkit-scrollbar {
+  display: block;
+}
+
+/* Arrow buttons */
+.gallery-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+
+  /* Visibility improvements */
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.gallery-btn.left {
+  left: 0;
+}
+
+.gallery-btn.right {
+  right: 0;
 }
 
 .content-block h3 {
@@ -742,4 +907,86 @@ body {
     .about-text::before {
         display: none;
     }
+}
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 2rem;          /* more breathing room */
+  background: #111;
+  color: #eee;
+  gap: 3rem;                   /* more space between columns */
+  flex-wrap: wrap;
+  border-top: 1px solid #333; /* subtle divider */
+  font-size: 0.95rem;         /* slightly smaller, cleaner */
+}
+
+.site-footer h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.site-footer p {
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-center {
+  text-align: center;
+  max-width: 400px;           /* keeps text readable */
+  margin: 0 auto;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    text-align: center;
+  }
+}
+
+.social-icon {
+ display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.social-icon:hover {
+  opacity: 0.7;
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
