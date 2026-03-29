@@ -116,7 +116,7 @@ const contentBlocks = [
   {
     type: "text-only",
     title: "Result and Reflection",
-    text: ` I have learned a ton about how GOAP works and making AIs plan and take actions while cooperating with each other. 
+    text: ` I have learned a ton about how GOAP works and making AIs plan while cooperating with each other. 
     The hardest and most time consuming part has been defining the goals and what effects the actions should have on the state. 
     You want to avoid making the goals and actions result in the AI achieving a perfect state, there should always be some desired state to reach. 
     Otherwise, the planner won’t work since you have already reached the goal and nothing needs to be done. Calculating goal relevance has also been a challenge to balance 
@@ -125,7 +125,7 @@ const contentBlocks = [
   {
     type: "text-only",
     title: "",
-    text: `I am a both a bit disappointed and satisfied with the end result. I would have liked to have added more behaviours for the AI but at the same time I feel like I have reached a solid base to build upon and add more goals and actions. 
+    text: `I am a both satisfied and a bit disappointed with the end result. I would have liked to have added more behaviours for the AI but at the same time I feel like I have reached a solid base to build upon and add more goals and actions. 
       I would have loved to add more communication between the AI and tactical behaviours like flanking an enemy position, help a friendly to safety and take cover behind a structure. `
   },
   {
