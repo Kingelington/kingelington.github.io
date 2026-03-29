@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    <div class="footer-right">
   <h4>Contact</h4>
-  <p>Email: yourmail@example.com</p>
+  <p>Email: </p>
 
   <a class="social-icon" href="https://www.linkedin.com/in/yourprofile" target="_blank">
     <img src="icons/InBug-White.png" alt="LinkedIn" class="icon-img">

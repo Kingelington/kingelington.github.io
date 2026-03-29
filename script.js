@@ -116,17 +116,16 @@ const contentBlocks = [
   {
     type: "text-only",
     title: "Result and Reflection",
-    text: `I feel like this project was a success! 
-    I have learned a ton about how GOAP works and making AIs plan and take actions while cooperating with each other. 
+    text: ` I have learned a ton about how GOAP works and making AIs plan and take actions while cooperating with each other. 
     The hardest and most time consuming part has been defining the goals and what effects the actions should have on the state. 
     You want to avoid making the goals and actions result in the AI achieving a perfect state, there should always be some desired state to reach. 
     Otherwise, the planner won’t work since you have already reached the goal and nothing needs to be done. Calculating goal relevance has also been a challenge to balance 
-    as the number of goals increase and to make it somewhat predictable.`
+    as the number of goals increase.`
   },
   {
     type: "text-only",
     title: "",
-    text: `I feel like I have reached a solid base to build upon and add more goals and actions. 
+    text: `I am a both a bit disappointed and satisfied with the end result. I would have liked to have added more behaviours for the AI but at the same time I feel like I have reached a solid base to build upon and add more goals and actions. 
       I would have loved to add more communication between the AI and tactical behaviours like flanking an enemy position, help a friendly to safety and take cover behind a structure. `
   },
   {
@@ -138,11 +137,11 @@ const contentBlocks = [
     title: "Goals and Actions",
     text: `Each AI has a world state that describes how they perceive the world. The goals have desired world states and actions have effects and preconditions.
     The action's effects describe what changes to the AI's world state if we perform this action, and the preconditions describe which states are required to perform the action. Some actions may also
-    depend on preconditions that has to be evaluated while running. They can depend on something in the world that is changing and therefore must be continually evaluated. With this you can create a plan. 
+    have preconditions that has to be evaluated while running. They can depend on something in the world that is changing and therefore must be continually evaluated. With this you can create a plan. 
     I chose to represent my world states with an enum key and an int value. I did this to be able to calculate which goal to follow based on urgency. To begin planning I start with the goal and plan backwards.
-    I find an action whose effect fully or partially satisfies the desired states of the goal. When I have found an action I add it's preconditions to my desired states. So, the next action will need to satisfy the
+    I find an action whose effect fully or partially satisfies the desired states of the goal. When I have found an action I add its preconditions to my desired states. So, the next action will need to satisfy the
     preconditions of the action before. I keep this up until I find an action that matches the current world state of the AI which means we have found an action that we can start with. This will then output as a plan
-    of actions that the AI can begin to follow to reach it's goal`,
+    of actions that the AI can use to reach its goal`,
       image:"images/actionEffectAndPrecond.png"
   },
   {
@@ -150,7 +149,7 @@ const contentBlocks = [
     title: "Coming up with a plan",
     text: `Astar is commonly used to make a plan of actions. We have created an Astar algorithm earlier during our education
     and we used it for pathfinding in our last game project. The one we used in the game project was adjusted to work with a navmesh which it wasnt going to be used for in this project. I wanted it to be general enough 
-    to work with different kinds of graphs. I had some thought of using a grid and pathfinding in this project aswell, so I wanted to make sure it worked for both my GOAP graph and 
+    to work with different kinds of graphs. I had thought of using a grid and pathfinding in this project aswell, so I wanted to make sure it worked for both my GOAP graph and 
     grid graph. I came to the conclusion that most of the calculations needs to be done in the graph. Astar is used to search
     through the graph, but calculating heuristics, getting neighbours and calculating costs for edges is tied to the specific graph and nodes we are searching through. So I made the Astar templated and the responsiblities 
     of getting neigbours etc are put in the graph.`,
@@ -160,7 +159,7 @@ const contentBlocks = [
     title: "World States",
     text: `I started adding the control points and some new things appeared that I needed to keep in mind.
     With control points all the states isn't strongly tied to the AI agent. Control points have an owner who controls it, it has a capture progress, are their any friends or enemies nearby?
-    This information is needed for plannig and as I researched objects in GOAP I found a lot of information about smart objects. `,
+    This information is needed for planning and as I researched objects in GOAP I found a lot of information about smart objects. `,
     image: "images/startOfGame.png"
   },
   {
@@ -176,7 +175,7 @@ const contentBlocks = [
     text: `A big part of this project has been about picking the most relevant goal. When control points were implemented I realized that the way goal relevance was calculated wasn't enough. 
     I had a too general calculation where I just compared the value of the current state and desired state and the biggest difference was the most relevant. But at this point it became obvious that goals 
     needed to be able to have it's own calculation of relevance. For a capture point goal we need to consider if we own it and if we need an extra point to make a decision
-    on how relevant the goal is. With four control points, goals and actions started to explode. I had a capture goal and action for every point. This made it both hard to maintain the goals and manage the relevance
+    on how relevant the goal is. With four control points, the number of goals and actions started to increase rapidly. I had a capture goal and action for every point. This made it both hard to maintain the goals and manage the relevance
     scoring and I felt that I wasn't really utilising GOAP. I changed the goals from Capture A, B, etc to instead have a goal "Increase Score" which becomes relevant if the team is behind on score. 
     Now I had one goal to increase the score and one action per point to capture it. When planning we use the action's cost which will be based on distance to the point and if it is defended and the cheapest action 
     will be the point that is easiest to capture.`
@@ -186,7 +185,7 @@ const contentBlocks = [
     title: "AI that cooperates",
     text: `Now I had a goal to increase score and maintain their lead. This caused one team to be more aggresive and the other defensive. Though at first all chose the same goal and same actions.
     When the maintain lead goal was selected the AI takes a snapshot of the current state and creates a plan which caused all of them to pick the same point to defend. So here started the challenge 
-    of making multiple AI's communicate their intention so their teammates can make an informed choice when they plan. When a plan is created we will commit to the plan and informing our team mates what we are doing.  
+    of making multiple AI's communicate their intention so their teammates can make an informed choice when they plan. When a plan is created we will commit to the plan and inform our teammates what we are doing.  
     When calculating the cost of defending a point we can take in to account how many have already commited to guarding it.`,
     image: "images/capturePointSplitBlue.gif"
   },
