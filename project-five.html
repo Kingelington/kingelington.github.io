@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+  <div class="nav-container" id="navbar"></div>
+</header>
+
+<body>
+<div class="gameprojectSecondYear">
+
+  <!-- Video -->
+  <div class="gameproject-video">
+    <iframe 
+      src="https://www.youtube.com/embed/6T9ucwCqhoA?si=8vP5Z4te63_JaRsR"
+      title="Project Video"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Title -->
+  <h2 class="gameproject-title">SPITE: OATHBOUND</h2>
+
+  <!-- Details Window -->
+  <div class="gameproject-details">
+    <div><strong>Engine:</strong> Frostheim</div>
+    <div><strong>Language:</strong> C++</div>
+    <div><strong>Duration:</strong> 14 weeks</div>
+  </div>
+
+  <!-- Summary -->
+ <div class="gameproject-summary">
+  <h3>Summary</h3>
+  <p>
+      This game project was divided in two parts. First we had four weeks of preproduction which allowed us to create our engine with the technical foundation and plan 
+      the framework of our game.
+      The second part was ten weeks and the production part where we produced the game.
+
+      All games are based on Diablo 3 and a theme, our theme was Viking Saga. You play as a shieldmaiden and you are attacked by undead. For some reason the souls are not carried
+      off to valhalla for their final rest. You embark on a quest to save your people with the help of a valkyrie who lends you her strength.
+
+      During this project I worked mostly with pathfinding on a navmesh and AI Behaviours.
+  </p>
+</div>
+
+<div class="project-container">
+  <section class="project-section" id="process-section">
+    <div id="content-container"></div>
+  </section>
+</div>
+
+  <!-- Screenshot Gallery -->
+<div class="gameproject-gallery-wrapper">
+
+  <button class="gallery-btn left">‹</button>
+
+  <div class="gameproject-gallery">
+    <img src="images/p5screenshot1.png" alt="">
+    <img src="images/p5screenshot2.png" alt="">
+    <img src="images/p5screenshot3.png" alt="">
+    <img src="images/p5screenshot4.png" alt="">
+    <img src="images/p5screenshot5.png" alt="">
+  </div>
+
+  <button class="gallery-btn right">›</button>
+
+</div>
+</div>
+
+<script>
+const gallery = document.querySelector('.gameproject-gallery');
+
+document.querySelector('.gallery-btn.left').onclick = () => {
+  gallery.scrollBy({ left: -300, behavior: 'smooth' });
+};
+
+document.querySelector('.gallery-btn.right').onclick = () => {
+  gallery.scrollBy({ left: 300, behavior: 'smooth' });
+};
+</script>
+
+<script src="navbar.js"></script>
+<script src="footer.js"></script>
+<script src="gameProjectFive.js"></script>
+</body>
+
+</html>

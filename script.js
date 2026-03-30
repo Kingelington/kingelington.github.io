@@ -203,40 +203,40 @@ const contentBlocks = [
 
 const gameProjects = [
   {
-    title: "Merle - the kinda incompetent wizard (In Progress)",
-    image: "images/project1.png",
-    link: "index.html",
-    description: "A game about a wizard who has made a mess"
+    title: "",
+    image: "images/SpiteOathbound_Thumbnail.png",
+    link: "project-six.html",
+    description: ""
   },
   {
-    title: "Spite : Oathbound",
-    image: "images/project2.png",
-    link: "index.html",
-    description: "Play as a shieldmaiden..."
+    title: "",
+    image: "images/SpiteOathbound_Thumbnail.png",
+    link: "project-five.html",
+    description: ""
   },
   {
-    title: "Operation Space Travel",
-    image: "images/project1.png",
+    title: "",
+    image: "images/p4Thumbnail.png",
     link: "project-four.html",
-    description: "Awesome game!"
+    description: ""
   },
   {
-    title: "TunnelVision",
-    image: "images/project1.png",
+    title: "",
+    image: "images/p3Thumbnail.png",
     link: "project-three.html",
-    description: "Awesome game!"
+    description: ""
   },
   {
-    title: "Pawn's Gambit",
-    image: "images/project1.png",
+    title: "",
+    image: "images/p2Thumbnail.png",
     link: "project-two.html",
-    description: "Awesome game!"
+    description: ""
   },
   {
-    title: "CyberBoard",
-    image: "images/project1.png",
+    title: "",
+    image: "images/p1Thumbnail.png",
     link: "project-one.html",
-    description: "Awesome game!"
+    description: ""
   },
 ];
 
@@ -298,13 +298,15 @@ if(gameContainer)
       card.href = project.link;
       card.classList.add("project-card");
     
-      card.innerHTML = `
-        <div class="card-image" style="background-image: url('${project.image}')"></div>
-        <div class="card-overlay">
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-        </div>
-      `;
+     card.innerHTML = `
+      <div class="card-image">
+        <img src="${project.image}" alt="${project.title}">
+      </div>
+      <div class="card-overlay">
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+      </div>
+    `;
     
       gameContainer.appendChild(card);
     });

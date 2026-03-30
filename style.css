@@ -545,6 +545,12 @@ body {
   font-family: sans-serif;
 }
 
+.gameprojectSecondYear {
+  padding: 80px 8%;
+  max-width: 1600px;
+  margin: auto;
+}
+
 /* Video */
 .gameproject-video iframe {
   width: 100%;
@@ -697,6 +703,15 @@ body {
   border-radius: 8px;
 }
 
+.video {
+  flex: 1;
+}
+
+.video video {
+  width: 100%;
+  border-radius: 8px;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .content-block {
@@ -754,20 +769,27 @@ body {
 .project-card .card-image {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
+}
+
+.project-card .card-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
   filter: brightness(0.6);
   transition: filter 0.3s ease;
 }
 
-.project-card:hover .card-image {
-  filter: brightness(0.4);
+.project-card:hover .card-image img{
+  filter: brightness(1.0);
 }
 
 /* Overlay text */
 .project-card .card-overlay {
   position: absolute;
   bottom: 0;
+  width: 100%;
   padding: 20px;
   pointer-events: none; /* ensures hover works on whole card */
 }
