@@ -151,7 +151,7 @@ const contentBlocks = [
     and we used it for pathfinding in our last game project. The one we used in the game project was adjusted to work with a navmesh which it wasnt going to be used for in this project. I wanted it to be general enough 
     to work with different kinds of graphs. I had thought of using a grid and pathfinding in this project aswell, so I wanted to make sure it worked for both my GOAP graph and 
     grid graph. I came to the conclusion that most of the calculations needs to be done in the graph. Astar is used to search
-    through the graph, but calculating heuristics, getting neighbours and calculating costs for edges is tied to the specific graph and nodes we are searching through. So I made the Astar templated and the responsiblities 
+    through the graph. Calculating heuristics, getting neighbours and calculating costs for edges is tied to the specific graph and nodes we are searching through. So I made the Astar templated and the responsiblities 
     of getting neigbours etc are put in the graph.`,
   },
   {
@@ -203,37 +203,37 @@ const contentBlocks = [
 
 const gameProjects = [
   {
-    title: "",
+    title: "Merle: The kinda incompetent wizard",
     image: "images/SpiteOathbound_Thumbnail.png",
     link: "project-six.html",
     description: ""
   },
   {
-    title: "",
+    title: "SPITE: OATHBOUND",
     image: "images/SpiteOathbound_Thumbnail.png",
     link: "project-five.html",
     description: ""
   },
   {
-    title: "",
+    title: "Operation Space Travel",
     image: "images/p4Thumbnail.png",
     link: "project-four.html",
     description: ""
   },
   {
-    title: "",
+    title: "TunnelVision",
     image: "images/p3Thumbnail.png",
     link: "project-three.html",
     description: ""
   },
   {
-    title: "",
+    title: "Pawn's Gambit",
     image: "images/p2Thumbnail.png",
     link: "project-two.html",
     description: ""
   },
   {
-    title: "",
+    title: "CyberBoard",
     image: "images/p1Thumbnail.png",
     link: "project-one.html",
     description: ""

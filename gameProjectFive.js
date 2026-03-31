@@ -1,12 +1,12 @@
 
 const contentBlocks = [
   {
-    type: "text-image",
+    type: "text-video",
     title: "Pathfinding",
     text: `I started to work with importing a navmesh and added functionality to use it for pathfinding with Astar. All characters in the game use pathfinding, except the boss
     who is stationary. The characters are using steering behaviours to move, the player and the enemies both have a path follow controller. The enemies also has a separation controller
     so they don't clip into each other and display a flocking behaviour.`,
-    image: `images/p4screenshot4.png`
+    video: `video/pathfinding.mp4`
   },
   {
     type: "text-image",
@@ -63,6 +63,24 @@ if(container)
         case "image-only":
           contentBlock.classList.add("image-only");
           contentBlock.innerHTML = `<img src="${block.image}" alt="">`;
+          break;
+
+         case "text-video":
+          if (index % 2 === 1) contentBlock.classList.add("reverse");
+    
+          const textvidDiv = document.createElement("div");
+          textvidDiv.classList.add("text");
+          textvidDiv.innerHTML = `<h3>${block.title}</h3><p>${block.text}</p>`;
+    
+          const videoDiv = document.createElement("div");
+          videoDiv.classList.add("video");
+          videoDiv.innerHTML = `
+            <video autoplay muted loop playsinline>
+              <source src="${block.video}" type="video/mp4">
+            </video>`;
+    
+          contentBlock.appendChild(textvidDiv);
+          contentBlock.appendChild(videoDiv);
           break;
     
         default:

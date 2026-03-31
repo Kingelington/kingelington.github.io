@@ -538,7 +538,7 @@ body {
 }
 
 .gameproject {
-  max-width: 900px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 20px;
   color: #ddd;
@@ -677,7 +677,7 @@ body {
 }
 
 .content-block p {
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 1.1rem;
 }
 
@@ -751,8 +751,8 @@ body {
 /* Card wrapper */
 .project-card {
   position: relative;
-  display: block;
-  height: 220px;
+  display: inline-block;
+  width: 100%;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -785,12 +785,22 @@ body {
   filter: brightness(1.0);
 }
 
+.project-card:hover .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Overlay text */
 .project-card .card-overlay {
   position: absolute;
+  inset: 0;
   bottom: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 20px;
+  opacity: 0;
   pointer-events: none; /* ensures hover works on whole card */
 }
 
@@ -798,6 +808,12 @@ body {
 .project-card .card-overlay h3 {
   margin: 0 0 8px;
   font-size: 1.2rem;
+  text-shadow:
+  -1px -1px 0 #000,
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000;
+
 }
 
 /* Overlay paragraph */
@@ -816,14 +832,6 @@ body {
 
   .project-card {
     height: 180px;
-  }
-
-  .project-card .card-overlay h3 {
-    font-size: 1.1rem;
-  }
-
-  .project-card .card-overlay p {
-    font-size: 0.9rem;
   }
 }
 

@@ -3,7 +3,7 @@ const navData = {
     logo: { text: "Anton Krook", url: "index.html" },
     links: [
         { name: "GOAP", url: "specialisering.html" },
-        { name: "Game Projects", url: "projects.html" },
+        { name: "Projects", url: "projects.html" },
         { name: "About Me", url: "about-me.html" },
         { name: "CV", url: "cv.html" }
     ],
