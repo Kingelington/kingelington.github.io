@@ -204,7 +204,7 @@ const contentBlocks = [
 const gameProjects = [
   {
     title: "Merle: The kinda incompetent wizard",
-    image: "images/SpiteOathbound_Thumbnail.png",
+    image: "images/merle.png",
     link: "project-six.html",
     description: ""
   },

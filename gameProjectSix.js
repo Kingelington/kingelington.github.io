@@ -1,18 +1,18 @@
 
 const contentBlocks = [
   {
-    type: "text-image",
+    type: "text-video",
     title: "Behaviour Tree",
     text: `Our AI basically has four states. Patrol, Chase, Attack and Investigate. My goal when creating the nodes for the tree has been reusability so if we want
     to use a behaviour tree for our next project we don't have to redo everything. I have taken a lot of inspiration from Unreal regarding what nodes might be required and
     how they are implemented. I plan to make a behaviour tree editor for our next project and be able to create nodes with visual scripting.`,
-    image: `images/p4screenshot4.png`
+    video: `video/BehaviourKnight.mp4`
   },
   {
     type: "text-only",
     title: "Animations",
     text: `Since the last project I added more functionality to our animations. We can now import animation events from the FBX files which makes it easier to trigger
-    events at the correct time in the animation. Something that we struggled quite a bit with during the last project.`,
+    events at the correct time in the animation. Something that we struggled quite a bit with during our previous project.`,
     image: `images/p4screenshot4.png`
   },
   {

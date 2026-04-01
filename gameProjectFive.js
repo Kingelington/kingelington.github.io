@@ -6,22 +6,22 @@ const contentBlocks = [
     text: `I started to work with importing a navmesh and added functionality to use it for pathfinding with Astar. All characters in the game use pathfinding, except the boss
     who is stationary. The characters are using steering behaviours to move, the player and the enemies both have a path follow controller. The enemies also has a separation controller
     so they don't clip into each other and display a flocking behaviour.`,
-    video: `video/pathfinding.mp4`
+    video: `video/pathFindShow.mp4`
   },
   {
-    type: "text-image",
+    type: "text-video",
     title: "Enemy Behaviour",
     text: `The enemies are using a decision tree for their behaviour. The behaviour for this game is pretty simple, they can either chase, idle or fight.
-    I chose a decision tree because I felt it was sufficient to support this kind of behaviour. It was fast to setup which gave us more time to iterate on the behaviour
-    and balance the enemies. `,
-    image: `images/p4screenshot4.png`
+    I chose a decision tree because I felt it was sufficient to support this kind of behaviour. It was fast to setup which gave us more time to test and iterate on the behaviour
+    aswell as balance the enemies. `,
+    video: `video/enemyGroup.mp4`
   },
   {
-    type: "text-image",
+    type: "text-video",
     title: "Boss Behaviour",
     text: `For the boss I decided to use a state machine to drive the behaviour. I felt it made more sense because the boss has clear and prolonged states with different
     attacks, for example the melee attack state is a three attack combo. We ended up with six states and to manage all this with a decision tree got messy. `,
-    image: `images/p4screenshot4.png`
+    video: `video/boss.mp4`
     },
 ];
 
