@@ -868,6 +868,9 @@ body {
 
 /* Text */
 .about-text h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
     font-size: 2rem;
     margin-bottom: 20px;
     font-weight: 500;
@@ -882,6 +885,12 @@ body {
 
 /* Subtil linje (valfri, men inte boxig) */
 .about-text {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
 }
 
