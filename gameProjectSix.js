@@ -4,8 +4,7 @@ const contentBlocks = [
     type: "text-video",
     title: "Behaviour Tree",
     text: `Our AI basically has four states. Patrol, Chase, Attack and Investigate. My goal when creating the nodes for the tree has been reusability so if we want
-    to use a behaviour tree for our next project we don't have to redo everything. I have taken a lot of inspiration from Unreal regarding what nodes might be required and
-    how they are implemented. I plan to make a behaviour tree editor for our next project and be able to create nodes with visual scripting.`,
+    to use a behaviour tree for our next project we don't have to redo everything. I plan to make a behaviour tree editor for our next project and be able to create nodes with visual scripting.`,
     video: `video/BehaviourKnight.mp4`
   },
   {

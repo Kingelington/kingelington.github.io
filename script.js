@@ -139,13 +139,13 @@ const contentBlocks = [
     The action's effects describe what changes to the AI's world state if we perform this action, and the preconditions describe which states are required to perform the action. Some actions may also
     have preconditions that has to be evaluated while running. They can depend on something in the world that is changing and therefore must be continually evaluated. With this you can create a plan. 
     I chose to represent my world states with an enum key and an int value. I did this to be able to calculate which goal to follow based on urgency. To begin planning I start with the goal and plan backwards.
-    I find an action whose effect fully or partially satisfies the desired states of the goal. When I have found an action I add its preconditions to my desired states. So, the next action will need to satisfy the
+    I find an action whose effect fully or partially satisfies the desired states of the goal. When I have found an action I add its preconditions to my desired states. So, the next action will also need to satisfy the
     preconditions of the action before. I keep this up until I find an action that matches the current world state of the AI which means we have found an action that we can start with. This will then output as a plan
     of actions that the AI can use to reach its goal`,
       image:"images/actionEffectAndPrecond.png"
   },
   {
-    type: "text-only",
+    type: "text-image",
     title: "Coming up with a plan",
     text: `Astar is commonly used to make a plan of actions. We have created an Astar algorithm earlier during our education
     and we used it for pathfinding in our last game project. The one we used in the game project was adjusted to work with a navmesh which it wasnt going to be used for in this project. I wanted it to be general enough 
@@ -153,6 +153,7 @@ const contentBlocks = [
     grid graph. I came to the conclusion that most of the calculations needs to be done in the graph. Astar is used to search
     through the graph. Calculating heuristics, getting neighbours and calculating costs for edges is tied to the specific graph and nodes we are searching through. So I made the Astar templated and the responsiblities 
     of getting neigbours etc are put in the graph.`,
+    image: "images/GoapGraph.png"
   },
   {
     type: "text-image",
