@@ -18,7 +18,7 @@ const contentBlocks = [
     type: "text-video",
     title: "",
     text: `We can also import sockets which are locations in the animation that we can place objects on. Our AI for example has a socket 
-    by the head which we use as an achor for the vision cone so wherever the AI looks in the animation the vision cone will follow and gather sight info.`,
+    by the head which we use as an anchor for the vision cone so wherever the AI looks in the animation the cone will follow and gather sight info.`,
     video: `video/socketWithVisionCone.mp4`
   },
 ];

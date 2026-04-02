@@ -87,7 +87,7 @@ function draw() {
     ctx.arc(node.x, node.y, 4, 0, Math.PI * 2);
 
     if (node === currentNode) {
-      ctx.fillStyle = "#00ffcc";
+      ctx.fillStyle = "#00ffcc36";
     } else {
       ctx.fillStyle = "rgba(255,255,255,0.3)";
     }
@@ -137,7 +137,10 @@ const contentBlocks = [
     title: "Goals and Actions",
     text: `Each AI has a world state that describes how they perceive the world. The goals have desired world states and actions have effects and preconditions.
     The action's effects describe what changes to the AI's world state if we perform this action, and the preconditions describe which states are required to perform the action. Some actions may also
-    have preconditions that has to be evaluated while running. They can depend on something in the world that is changing and therefore must be continually evaluated. With this you can create a plan. 
+    have preconditions that has to be evaluated while running. They can depend on something in the world that is changing and therefore must be continually evaluated. 
+    With this you can create a plan. 
+    <br>
+    <br> 
     I chose to represent my world states with an enum key and an int value. I did this to be able to calculate which goal to follow based on urgency. To begin planning I start with the goal and plan backwards.
     I find an action whose effect fully or partially satisfies the desired states of the goal. When I have found an action I add its preconditions to my desired states. So, the next action will also need to satisfy the
     preconditions of the action before. I keep this up until I find an action that matches the current world state of the AI which means we have found an action that we can start with. This will then output as a plan
@@ -176,7 +179,10 @@ const contentBlocks = [
     text: `A big part of this project has been about picking the most relevant goal. When control points were implemented I realized that the way goal relevance was calculated wasn't enough. 
     I had a too general calculation where I just compared the value of the current state and desired state and the biggest difference was the most relevant. But at this point it became obvious that goals 
     needed to be able to have it's own calculation of relevance. For a capture point goal we need to consider if we own it and if we need an extra point to make a decision
-    on how relevant the goal is. With four control points, the number of goals and actions started to increase rapidly. I had a capture goal and action for every point. This made it both hard to maintain the goals and manage the relevance
+    on how relevant the goal is.
+    <br>
+    <br>
+    With four control points, the number of goals and actions started to increase rapidly. I had a capture goal and action for every point. This made it both hard to maintain the goals and manage the relevance
     scoring and I felt that I wasn't really utilising GOAP. I changed the goals from Capture A, B, etc to instead have a goal "Increase Score" which becomes relevant if the team is behind on score. 
     Now I had one goal to increase the score and one action per point to capture it. When planning we use the action's cost which will be based on distance to the point and if it is defended and the cheapest action 
     will be the point that is easiest to capture.`
@@ -185,7 +191,10 @@ const contentBlocks = [
     type: "text-image",
     title: "AI that cooperates",
     text: `Now I had a goal to increase score and maintain their lead. This caused one team to be more aggresive and the other defensive. Though at first all chose the same goal and same actions.
-    When the maintain lead goal was selected the AI takes a snapshot of the current state and creates a plan which caused all of them to pick the same point to defend. So here started the challenge 
+    When the maintain lead goal was selected the AI takes a snapshot of the current state and creates a plan which caused all of them to pick the same point to defend. 
+    <br>
+    <br>
+    Here started the challenge 
     of making multiple AI's communicate their intention so their teammates can make an informed choice when they plan. When a plan is created we will commit to the plan and inform our teammates what we are doing.  
     When calculating the cost of defending a point we can take in to account how many have already commited to guarding it.`,
     image: "images/capturePointSplitBlue.gif"
@@ -195,7 +204,10 @@ const contentBlocks = [
     title: "Reevaluating Goals and Plans",
     text: `I needed to be able to reevaluate our current goal in case something happens which makes this goal irrelevant. When I added a survive goal it was never chosen even though it should be scoring highest. 
     The problem was that we were currently trying to fulfill another goal and with no reevaluation we were stuck on that goal until it was completed. When adding goal reevaluation I also noticed that a lot of times
-    the same goal was chosen as most relevant but the current plan we have might not be the most effective or viable anymore. So even if we reevaluate the goal and find the same one we also have to check if the current 
+    the same goal was chosen as most relevant but the current plan we have might not be the most effective or viable anymore. 
+    <br>
+    <br>
+    Even if we reevaluate the goal and find the same one we also have to check if the current 
     plan we are following is the best. The goal might be to maintain the lead but another point is in more need of defending than the one we chose earlier. In the gif we see an AI with the goal Increase Score and attack action. 
     It should have switched to survive and move to heal up when so low on health but without reevaluating the goal, we will try to complete the current first before checking a new one.`,
     image: "images/StuckOnGoal.gif"

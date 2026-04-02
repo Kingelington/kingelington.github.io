@@ -13,49 +13,9 @@
   <div class="nav-container" id="navbar"></div>
 </header>
 
-  <section class="cv-page fade-section">
-  <h1>Curriculum Vitae</h1>
-
-  <!-- Erfarenhet -->
-  <div class="cv-section">
-    <h2>Erfarenhet</h2>
-    <div class="cv-item">
-      <h3>Jobb 1</h3>
-      <span>2023 – Nu</span>
-      <p>Beskrivning.</p>
-    </div>
-    <div class="cv-item">
-      <h3>jobb2</h3>
-      <span>År</span>
-      <p>Beskrivning.</p>
-    </div>
-  </div>
-
-  <!-- Utbildning -->
-  <div class="cv-section">
-    <h2>Utbildning</h2>
-    <div class="cv-item">
-      <h3>TGA</h3>
-      <span>2024 – nu</span>
-      <p>Beskrivning.</p>
-    </div>
-  </div>
-
-  <!-- Färdigheter -->
-  <div class="cv-section">
-    <h2>Skills</h2>
-    <div class="cv-item">
-      <p>Skills</p>
-    </div>
-  </div>
-
-  <!-- Kontakt -->
-  <div class="cv-section">
-    <h2>Kontakt</h2>
-    <div class="cv-item">
-      <p>Email: <a href="mailto:mejladress@example.com">e-post</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/dittnamn" target="_blank">Linkeid</a></p>
-    </div>
+<section class="cv-section fade-section">
+  <div class="cv-container">
+    <img src="doc/cv.png" alt="CV Preview" class="cv-image">
   </div>
 </section>
 
@@ -94,5 +54,6 @@ const observer = new IntersectionObserver((entries) => {
 sections.forEach(section => observer.observe(section));
 </script>
 <script src="navbar.js"></script>
+<script src="footer.js"></script>
 </body>
 </html>

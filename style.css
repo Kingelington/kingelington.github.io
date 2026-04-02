@@ -30,7 +30,6 @@ body {
   text-align: center;
   color: white;
   overflow: hidden;
-  margin-top: 80px;
 }
 
 .content-block.text-only {
@@ -46,6 +45,14 @@ body {
   object-fit: cover;
   z-index: -2;
 }
+
+@media (max-width: 700px) {
+  .background-video {
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
 
 .overlay {
   position: absolute;
@@ -68,6 +75,37 @@ body {
   margin-bottom: 30px;
   opacity: 0.9;
 }
+
+.hero-content .cta-button {
+  padding: 15px 40px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 1px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+@media (max-width: 700px) {
+
+  .hero-content h1 {
+    font-size: 2.4rem;     /* mycket bättre för mobil */
+    line-height: 1.2;      /* tajtare radavstånd */
+    margin-bottom: 10px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 24px;    /* mindre men fortfarande klickvänlig */
+  }
+}
+
 
 .cta-button {
   padding: 15px 40px;
@@ -97,6 +135,23 @@ body {
   white-space: nowrap;
   text-align: center;     /* säkerställ centrering */
 }
+
+@media (max-width: 700px) {
+
+  .section-header {
+    padding: 0 20px;          /* mindre sidomarginal */
+    gap: 8px;                 /* lite tajtare spacing */
+    margin-bottom: 30px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;        /* mindre men fortfarande tydlig */
+    white-space: normal;      /* låt titeln brytas på mobil */
+    text-align: center;
+    line-height: 1.2;         /* snyggare radavstånd */
+  }
+}
+
 
 .header-line {
   width: 60%;                 /* linjen tar 60% av raden */
@@ -143,6 +198,8 @@ body {
     flex-direction: column;
     text-align: center;
   }
+
+
 
   .image-content {
     justify-content: center;
@@ -213,7 +270,7 @@ body {
 }
 
 .game-box:hover .game-bg {
-  filter: brightness(0.5);
+  filter: brightness(1.0);
 }
 
 .game-info {
@@ -331,6 +388,11 @@ body {
     filter: brightness(1.2);
 }
 
+.social-icons a:hover svg {
+    transform: scale(1.2);
+    filter: brightness(0.8);
+}
+
 .nav-links, .social-icons { display: flex; gap: 30px; }
 /* Hamburger för mobil */
 .hamburger {
@@ -346,7 +408,65 @@ body {
 
 /* Mobil */
 @media (max-width: 768px) {
-    .nav-links, .social-icons { 
+
+    .navbar {
+        position: relative;
+        height: 60px;
+        display: block; /* vi skiter i flex här */
+    }
+
+    /* LOGO – hårt centrerad oberoende av bredd */
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); /* exakt mitten */
+        z-index: 1000;
+        white-space: nowrap; /* så den inte bryts på små skärmar */
+    }
+
+    .logo a {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* SOCIAL ICONS – vänster */
+    .social-icons {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 15px;
+        z-index: 1100;
+    }
+
+    /* HAMBURGER – höger */
+    .hamburger {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        border-radius: 2px;
+    }
+
+    /* DROPDOWN MENY */
+    .nav-links { 
         display: none;
         flex-direction: column;
         gap: 15px;
@@ -359,26 +479,10 @@ body {
         z-index: 1000;
     }
 
-    .nav-links.active 
-    {
-       display: flex; 
-    }
-    .hamburger { display: flex; position: absolute; top: 15px; right: 20px; cursor: pointer; z-index: 1100; flex-direction: column; gap: 4px; }
-    .hamburger span { width: 25px; height: 3px; background: white; border-radius: 2px; }
-
-        .social-icons {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        object-fit: contain; /* håller proportioner */
-        top: 15px;
-        left: 20px; /* flytta till vänster */
-        z-index: 1100;
+    .nav-links.active {
         display: flex;
-        gap: 15px;
     }
 }
-
 
 .cv-page {
   padding: 120px 10%;
@@ -997,7 +1101,9 @@ body {
 /* Mobile layout */
 @media (max-width: 700px) {
   .site-footer {
+    display: flex;
     flex-direction: column;
+    align-items: center;   /* centrerar alla block */
     text-align: center;
     gap: 2rem;
     padding: 2.5rem 1.5rem;
@@ -1006,9 +1112,51 @@ body {
   .footer-left,
   .footer-center,
   .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centrerar innehållet i blocket */
     text-align: center;
+    width: 100%;           /* gör att blocken fyller bredden */
   }
 }
+
+.cv-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.cv-container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.cv-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  margin-bottom: 25px;
+}
+
+.cv-download {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ffffff10;
+  border: 1px solid #ffffff40;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cv-download:hover {
+  background: #ffffff20;
+  transform: translateY(-2px);
+}
+
 
 .social-icon {
  display: inline-flex;
@@ -1021,7 +1169,8 @@ body {
 }
 
 .social-icon:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+  transform: scale(1.2);
 }
 
 .icon-img {

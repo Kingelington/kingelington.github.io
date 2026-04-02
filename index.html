@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio">
-  <title>Anton Krook</title>
+  <title>Anton Krook | Game Programmer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,11 +25,9 @@
   <div class="overlay"></div>
 
   <div class="hero-content">
-    <h1>Under Construction</h1>
+    <h1>Anton Krook</h1>
     <h2>AI Programmer</h2>
-    <a href="specialisering.html" class="cta-button">
-      Learn more
-    </a>
+    <a href="specialisering.html" class="cta-button"> Learn more </a>
   </div>
 
 </section>
@@ -72,27 +70,27 @@
   <!-- Grid med projekt -->
   <div class="games-grid">
 
-    <a href="game1.html" class="game-box">
-      <div class="game-bg" style="background-image: url('images/project1.png');"></div>
+    <a href="project-six.html" class="game-box">
+      <div class="game-bg" style="background-image: url('images/merle.png');"></div>
       <div class="game-info">
-        <h3>P7 - TBD</h3>
-        <p>A very cool game!</p>
+        <h3>Merle - The kinda incompetent wizard</h3>
+        <p>In progress game project</p>
       </div>
     </a>
 
-    <a href="game2.html" class="game-box">
-      <div class="game-bg" style="background-image: url('images/project2.png');"></div>
+    <a href="project-five.html" class="game-box">
+      <div class="game-bg" style="background-image: url('images/SpiteOathbound_Thumbnail.png');"></div>
       <div class="game-info">
-        <h3>Wizard game</h3>
-        <p>An awesome 3D platformer game in progress</p>
+        <h3>Spite: Oathbound</h3>
+        <p>Game project five and our first project with our own engine</p>
       </div>
     </a>
 
-    <a href="game3.html" class="game-box">
-      <div class="game-bg" style="background-image: url('images/project1.png');"></div>
+    <a href="project-two.html" class="game-box">
+      <div class="game-bg" style="background-image: url('images/p2Thumbnail.png');"></div>
       <div class="game-info">
-        <h3>Spite OathBound</h3>
-        <p>A diablo like game where you play as a shieldmaiden trying to save doomed souls who are locked out of Asgard.</p>
+        <h3>Pawn's Gambit</h3>
+        <p>Awarded the Rookies Runner Up Game Of The Year Mobile and the Rookies People's Choice award</p>
       </div>
     </a>
 
@@ -118,16 +116,16 @@
 const sections = document.querySelectorAll('.fade-section');
 
 const options = {
-  threshold: 0.1,   // 10% av sektionen syns
+  threshold: 0.1,
   rootMargin: "0px 0px -50px 0px"
 };
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      entry.target.classList.add('visible');   // fadea in
+      entry.target.classList.add('visible');
     } else {
-      entry.target.classList.remove('visible'); // fadea ut
+      entry.target.classList.remove('visible');
     }
   });
 }, options);
