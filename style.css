@@ -740,27 +740,33 @@ body {
   scroll-snap-align: center;
 }
 
-@media (max-width: 768px) {
-    .gameproject-gallery {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  padding: 0;       /* viktigt */
-  margin: 0;        /* viktigt */
-}
 
-.gameproject-gallery img {
-  width: 100%;
-  height: auto;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  display: block;   /* tar bort extra whitespace */
-  margin: 0;        /* viktigt */
-  padding: 0;       /* viktigt */
-}
 
+
+@media (max-width: 768px) 
+{
+    .gameproject-gallery 
+    {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0;       /* viktigt */
+      margin: 0;        /* viktigt */
+    }
+
+
+  .gameproject-gallery img 
+  {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    display: block;   /* tar bort extra whitespace */
+    margin: 0;        /* viktigt */
+    padding: 0;       /* viktigt */
   }
+}
 
 
 .gameproject-gallery img:hover {
@@ -1126,7 +1132,7 @@ body {
 }
 
 /* Mobile layout */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .site-footer {
     display: flex;
     flex-direction: column;
@@ -1164,26 +1170,28 @@ body {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  margin-bottom: 25px;
 }
 
-.cv-download {
-  display: inline-block;
-  padding: 12px 28px;
-  background: #ffffff10;
-  border: 1px solid #ffffff40;
-  border-radius: 6px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: background 0.3s ease, transform 0.2s ease;
+.download-btn {
+    display: block;
+    padding: 12px 20px;
+    background-color: #0f0f0f;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 2px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
-.cv-download:hover {
-  background: #ffffff20;
-  transform: translateY(-2px);
+.download-btn:hover {
+    background-color: #0f0f0f;
+    transform: scale(1.1);
 }
-
 
 .social-icon {
  display: inline-flex;
