@@ -724,6 +724,9 @@ body {
   padding: 20px 0;
   scroll-behavior: smooth;
   width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .gameproject-gallery img {
@@ -734,7 +737,31 @@ body {
   flex-shrink: 0;         /* keeps them in one row */
   box-shadow: 0 4px 14px rgba(0,0,0,0.5);
   transition: transform 0.2s ease;
+  scroll-snap-align: center;
 }
+
+@media (max-width: 768px) {
+    .gameproject-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0;       /* viktigt */
+  margin: 0;        /* viktigt */
+}
+
+.gameproject-gallery img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  display: block;   /* tar bort extra whitespace */
+  margin: 0;        /* viktigt */
+  padding: 0;       /* viktigt */
+}
+
+  }
+
 
 .gameproject-gallery img:hover {
   transform: scale(1.03); /* tiny lift, not a zoom */
