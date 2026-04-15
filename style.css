@@ -407,7 +407,7 @@ body {
 }
 
 /* Mobil */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
     .navbar {
         position: relative;
